@@ -2,7 +2,7 @@
 env:
   VERIFY_SSL: true
   BASIC_AUTH_PASSWORD: ''
-  SECRET_TOKEN: 5607561a-5155-458a-99c7-7abfd07cda0d
+  SECRET_TOKEN: 2ec68b47-3a71-41c9-8d4d-6d3a9e09b05f
   BUNDLE_WITHOUT: test:development
 applications:
 - name: app-web
