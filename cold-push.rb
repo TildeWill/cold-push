@@ -35,6 +35,7 @@ class Pusher
   def push_all_the_things
     say("Pushing the bits...")
     system("cf push -f manifest.yml")
+    say("OK")
   end
 
   def write_manifest(app_config)
@@ -45,6 +46,7 @@ class Pusher
     app_config["applications"].map do |app|
       say("Creating #{app["name"]}...")
       `cf curl "/v2/apps?async=true" -X POST -d '{"name":"#{app["name"]}","space_guid":"#{space_guid}"}'`
+      say("OK")
     end
   end
 
@@ -53,6 +55,7 @@ class Pusher
       @service_prompts.each do |service_prompt|
         say("Binding #{service_prompt.service_instance_name} to #{app["name"]}...")
         `cf bind-service #{app["name"]} #{service_prompt.service_instance_name}`
+        say("OK")
       end
     end
   end
