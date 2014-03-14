@@ -22,7 +22,7 @@ class Pusher
     create_apps(app_config)
     bind_services(app_config)
     write_manifest(app_config)
-    push_all_the_things
+    push_all_the_things(app_config)
   end
 
   def get_binding
@@ -32,7 +32,7 @@ class Pusher
   private
   attr_writer :space_guid
 
-  def push_all_the_things
+  def push_all_the_things(app_config)
     say("Pushing the bits...")
     system("cf push -f manifest.yml")
     say("OK")
