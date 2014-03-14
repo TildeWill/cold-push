@@ -1,0 +1,14 @@
+---
+env:
+  VERIFY_SSL: true
+  BASIC_AUTH_PASSWORD: ''
+  SECRET_TOKEN: 5607561a-5155-458a-99c7-7abfd07cda0d
+  BUNDLE_WITHOUT: test:development
+applications:
+- name: app-web
+  host: cold-push-web
+  instances: 2
+  mem: 512M
+- name: app-workers
+  instances: 3
+  mem: 256M
